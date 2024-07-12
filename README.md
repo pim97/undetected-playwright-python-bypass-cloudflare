@@ -71,7 +71,3 @@ async with async_playwright() as p:
 - **Step 2:** Parse the target URL to extract the domain.
 - **Step 3:** Use Playwright to launch a browser, set the extracted cookie and user agent, and navigate to the specified URL through the provided proxy.
 
-### Functions
-
-- **`parse_cookie_string(cookie_string)`**: Parses the cookie string into a list of cookie dictionaries.
-- **`main()`**: The main asynchronous function that uses Playwright to launch the browser, set cookies and user agent, and navigate to the target URL.
