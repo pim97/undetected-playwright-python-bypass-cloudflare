@@ -8,16 +8,13 @@ This repository contains a Python script that sends a POST request to an API, ex
 - [Playwright](https://playwright.dev/python/docs/intro) for Python
 - Required Python packages (listed in `requirements.txt`)
 
-## Installation
-
-** Example **
-
+## Code example
 ```python
 async def chromev126():
     
     async with async_playwright() as p:
-        # Get cookies and user agent from Scrappey
-        cookie_object, user_agent, proxy_obj = get_cookies_and_user_agent(API_KEY, TARGET_URL, PROXY_URL, version=126, browser_name='chrome')
+        cookie_object, user_agent, proxy_obj = get_cookies_and_user_agent(API_KEY, TARGET_URL, 
+            PROXY_URL, version=126, browser_name='chrome')
 
         for browser_type in [p.chromium]:
             browser = await browser_type.launch(headless=False, proxy=proxy_obj, channel='chrome')
@@ -28,6 +25,8 @@ async def chromev126():
             await page.goto(TARGET_URL)
             await browser.close()
 ```
+
+## Installation
 
 1. **Clone the repository:**
 
