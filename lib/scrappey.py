@@ -41,7 +41,11 @@ def get_cookies_and_user_agent(api_key, target_url, proxy_url, version=126, brow
     print('----- Requesting cookies and user agent from Scrappey, may take 30 seconds -----')
 
     response = requests.post(url, json=body, headers=headers)
-    response_data = response.json()
+    
+    try:
+        response_data = response.json()
+    except Exception as e:
+        raise Exception('Error parsing response from Scrappey {}'.format(response.text))
     
     cookie_string = response_data['solution']['cookieString']  # Adjust this according to the actual response structure
     user_agent = response_data['solution']['userAgent']  # Adjust this according to the actual response structure
