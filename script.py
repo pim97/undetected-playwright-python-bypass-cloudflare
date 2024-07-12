@@ -27,7 +27,26 @@ async def chromev126():
             await context.add_cookies(cookie_object)
             await page.goto(TARGET_URL)
             await page.wait_for_load_state('networkidle')
-            await page.screenshot(path='screenshot.png')
+            await page.screenshot(path='screenshot_chrome.png')
             await browser.close()
 
+# Firefox V126 example
+async def firefox126():
+    
+    async with async_playwright() as p:
+        # Get cookies and user agent from Scrappey
+        cookie_object, user_agent, proxy_obj = get_cookies_and_user_agent(API_KEY, TARGET_URL, PROXY_URL, version=126, browser_name='firefox')
+
+        for browser_type in [p.firefox]:
+            browser = await browser_type.launch(headless=False, proxy=proxy_obj)
+            context = await browser.new_context(user_agent=user_agent)
+            page = await context.new_page()
+            
+            await context.add_cookies(cookie_object)
+            await page.goto(TARGET_URL)
+            await page.wait_for_load_state('networkidle')
+            await page.screenshot(path='screenshot_firefox.png')
+            await browser.close()
+
+asyncio.run(firefox126())
 asyncio.run(chromev126())
