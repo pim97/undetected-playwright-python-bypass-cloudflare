@@ -29,7 +29,7 @@ async with async_playwright() as p:
 1. **Clone the repository:**
 
     ```bash
-    git clone https://github.com/pim97/playwright-python-solve-cloudflare
+    git clone https://github.com/pim97/undetected-playwright-python-bypass-cloudflare.git
     cd repo-name
     ```
 
