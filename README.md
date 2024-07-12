@@ -1,4 +1,4 @@
-# Proxy User Agent and Cookie Setter
+# Playwright Python CF Solver
 
 This repository contains a Python script that sends a POST request to an API, extracts the cookie and user agent, and uses Playwright to set these cookies and user agent in a browser session while navigating to a specified URL through a proxy.
 
