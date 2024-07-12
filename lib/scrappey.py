@@ -14,7 +14,7 @@ def get_proxy_object(proxy_url):
     }
     return proxyObj
 
-def get_cookies_and_user_agent(api_key, target_url, proxy_url):
+def get_cookies_and_user_agent(api_key, target_url, proxy_url, version=126, browser_name='chrome'):
     url = f"https://publisher.scrappey.com/api/v1?key={api_key}"
     # url = f"http://localhost:87/v1?key={api_key}"
     headers = {
@@ -27,20 +27,24 @@ def get_cookies_and_user_agent(api_key, target_url, proxy_url):
         "noDriver": True,
         "browser": [
             {
-                "name": "chrome",
-                "minVersion": 126,
-                "maxVersion": 126
+                "name": browser_name,
+                "minVersion": version,
+                "maxVersion": version
             }
         ]
     }
+    
+    if browser_name == 'firefox':
+        body.pop('noDriver')
 
     response = requests.post(url, json=body, headers=headers)
     response_data = response.json()
     
     cookie_string = response_data['solution']['cookieString']  # Adjust this according to the actual response structure
     user_agent = response_data['solution']['userAgent']  # Adjust this according to the actual response structure
-    
-    return cookie_string, user_agent
+    cookie_object = parse_cookie_string(cookie_string, target_url=target_url)
+    proxy_object = get_proxy_object(proxy_url)
+    return cookie_object, user_agent, proxy_object
 
 def parse_cookie_string(cookie_string, target_url):
     # Extract domain from target URL
