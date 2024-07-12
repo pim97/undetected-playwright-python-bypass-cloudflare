@@ -36,7 +36,7 @@ This repository contains a Python script that sends a POST request to an API, ex
     In the script, replace `YOUR_API_KEY_HERE` with your actual API key and update the `proxy_url` with your proxy details:
 
     ```python
-    url = "http://localhost:87/v1?key=YOUR_API_KEY_HERE"
+    url = "https://publisher.scrappey.com/api/v1?key=YOUR_API_KEY_HERE"
     proxy_url = 'http://user:pass@host:ip'
     ```
 
