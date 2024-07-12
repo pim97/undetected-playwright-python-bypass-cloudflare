@@ -17,7 +17,7 @@ async def chromev126():
     
     async with async_playwright() as p:
         # Get cookies and user agent from Scrappey
-        cookie_object, user_agent, proxy_obj = get_cookies_and_user_agent(API_KEY, TARGET_URL, PROXY_URL)
+        cookie_object, user_agent, proxy_obj = get_cookies_and_user_agent(API_KEY, TARGET_URL, PROXY_URL, version=126, browser_name='chrome')
 
         for browser_type in [p.chromium]:
             browser = await browser_type.launch(headless=False, proxy=proxy_obj, channel='chrome')
