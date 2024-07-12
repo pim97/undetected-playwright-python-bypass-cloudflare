@@ -1,10 +1,10 @@
 import asyncio
 from playwright.async_api import async_playwright
-from scrappey import get_proxy_object, get_cookies_and_user_agent, parse_cookie_string
+from lib.scrappey import get_proxy_object, get_cookies_and_user_agent, parse_cookie_string
 
 # Configuration
 # Get your API key on Scrappey.com
-API_KEY = "API_KEY_HERE"
+API_KEY = "API_KEY"
 TARGET_URL = "https://topminecraftservers.org/vote/32492"
 PROXY_URL = 'http://user:pass@host:ip'
 
@@ -14,6 +14,8 @@ cookies = parse_cookie_string(cookie_string, target_url=TARGET_URL)
 proxyObj = get_proxy_object(PROXY_URL)
 
 async def main():
+    
+    # Chrome example V126
     async with async_playwright() as p:
         for browser_type in [p.chromium]:
             browser = await browser_type.launch(headless=False, proxy=proxyObj, channel='chrome')
