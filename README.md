@@ -58,15 +58,3 @@ This repository contains a Python script that sends a POST request to an API, ex
 
 - **`parse_cookie_string(cookie_string)`**: Parses the cookie string into a list of cookie dictionaries.
 - **`main()`**: The main asynchronous function that uses Playwright to launch the browser, set cookies and user agent, and navigate to the target URL.
-
-## Example Response Structure
-
-Make sure to adjust the `cookie_string` and `user_agent` extraction according to the actual structure of the response from your API.
-
-```json
-{
-  "solution": {
-    "cookieString": "cookie_name=cookie_value; another_cookie=another_value",
-    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36"
-  }
-}
