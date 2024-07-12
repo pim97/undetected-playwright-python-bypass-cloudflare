@@ -71,3 +71,8 @@ async with async_playwright() as p:
 - **Step 2:** Parse the target URL to extract the domain.
 - **Step 3:** Use Playwright to launch a browser, set the extracted cookie and user agent, and navigate to the specified URL through the provided proxy.
 
+## Legal and Ethical Considerations
+
+It's crucial to adhere to legal and ethical guidelines when conducting web scraping. Respect the website's terms of service and scraping policies. Ensure that the use of the extracted data complies with all relevant laws and regulations, especially concerning data privacy and intellectual property rights. 🚫⚖️
+
+*Disclaimer: This guide on web scraping is intended for educational and informational purposes only. Engage in responsible web scraping practices and adhere to the terms and conditions of the targeted website.* 📚🔍
