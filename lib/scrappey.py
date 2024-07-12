@@ -24,6 +24,7 @@ def get_cookies_and_user_agent(api_key, target_url, proxy_url, version=126, brow
         "cmd": "request.get",
         "url": target_url,
         "proxy": proxy_url,
+        "filter": ["cookieString", "userAgent"],
         "noDriver": True,
         "browser": [
             {
@@ -48,6 +49,8 @@ def get_cookies_and_user_agent(api_key, target_url, proxy_url, version=126, brow
     proxy_object = get_proxy_object(proxy_url)
     
     print('----- Cookies and user agent received from Scrappey -----')
+    print(f'User Agent: {user_agent}')
+    print(f'Cookies: {cookie_object}')
     
     return cookie_object, user_agent, proxy_object
 
