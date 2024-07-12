@@ -36,6 +36,8 @@ def get_cookies_and_user_agent(api_key, target_url, proxy_url, version=126, brow
     
     if browser_name == 'firefox':
         body.pop('noDriver')
+        
+    print('----- Requesting cookies and user agent from Scrappey, may take 30 seconds -----')
 
     response = requests.post(url, json=body, headers=headers)
     response_data = response.json()
@@ -44,6 +46,9 @@ def get_cookies_and_user_agent(api_key, target_url, proxy_url, version=126, brow
     user_agent = response_data['solution']['userAgent']  # Adjust this according to the actual response structure
     cookie_object = parse_cookie_string(cookie_string, target_url=target_url)
     proxy_object = get_proxy_object(proxy_url)
+    
+    print('----- Cookies and user agent received from Scrappey -----')
+    
     return cookie_object, user_agent, proxy_object
 
 def parse_cookie_string(cookie_string, target_url):
