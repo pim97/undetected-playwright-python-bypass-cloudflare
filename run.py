@@ -5,7 +5,7 @@ from urllib.parse import urlparse
 
 # Step 1: Send POST request and extract cookie and user agent
 # Get your API key here: https://scrappey.com
-url = "http://localhost:87/v1?key=YOUR_API_KEY_HERE"
+url = "https://publisher.scrappey.com/api/v1?key=YOUR_API_KEY_HERE"
 
 proxy_url = 'http://user:pass@host:ip'
 # Parse the proxy URL
