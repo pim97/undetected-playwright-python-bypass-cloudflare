@@ -36,14 +36,15 @@ This repository contains a Python script that sends a POST request to an API, ex
     In the script, replace `YOUR_API_KEY_HERE` with your actual API key and update the `proxy_url` with your proxy details:
 
     ```python
-    url = "https://publisher.scrappey.com/api/v1?key=YOUR_API_KEY_HERE"
-    proxy_url = 'http://user:pass@host:ip'
+    API_KEY = "API_KEY_HERE"
+    TARGET_URL = "https://"
+    PROXY_URL = 'http://user:pass@host:ip'
     ```
 
 2. **Run the script:**
 
     ```bash
-    python script_name.py
+    python script.py
     ```
 
     This will execute the script, sending a POST request to the API, extracting the cookie and user agent, and using Playwright to set these cookies and user agent in a browser session while navigating to the specified URL.
