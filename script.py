@@ -1,12 +1,14 @@
 import asyncio
 from playwright.async_api import async_playwright
 from lib.scrappey import get_proxy_object, get_cookies_and_user_agent, parse_cookie_string
+import os
+from dotenv import load_dotenv
 
-# Configuration
-# Get your API key on Scrappey.com
-API_KEY = "API_KEY"
+# Configuration set in .env file
+# Get your API key on Scrappey.com, create an .env file and set the API_KEY and PROXY_URL
+API_KEY = os.getenv('API_KEY')
+PROXY_URL = os.getenv('PROXY_URL')
 TARGET_URL = "https://topminecraftservers.org/vote/32492"
-PROXY_URL = 'http://user:pass@host:ip'
 
 # Get cookies and user agent from Scrappey
 cookie_string, user_agent = get_cookies_and_user_agent(API_KEY, TARGET_URL, PROXY_URL)
