@@ -69,7 +69,7 @@ async with async_playwright() as p:
 
 - **Step 1:** Send a POST request to the API and extract the cookie and user agent from the response.
 - **Step 2:** Parse the target URL to extract the domain.
-- **Step 3:** Use Playwright to launch a browser, set the extracted cookie and user agent, and navigate to the specified URL through the provided proxy.
+- **Step 3:** Use Playwright to launch a browser, set the extracted cookie and user agent, and navigate to the specified URL through the provided proxy. 
 
 ## Legal and Ethical Considerations
 
